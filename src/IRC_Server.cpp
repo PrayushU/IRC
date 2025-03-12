@@ -6,7 +6,9 @@
 
 IRC_Server::IRC_Server(boost::asio::io_context& context) : _io_context(context){
 
-  _connection_manager = std::make_shared<ConnectionManager>(_io_context, 9000);
+  
+  _command_executor = CommandExecutor();
+  _connection_manager = std::make_shared<ConnectionManager>(_command_executor, _io_context, 9000);
 }
 
 

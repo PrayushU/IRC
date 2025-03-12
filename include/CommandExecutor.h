@@ -1,7 +1,14 @@
 #include "MessageParser.h"
+#include "IRCResponse.h"
+
+
 
 class CommandExecutor{
+private:
+  IRCResponse handlePONG();
 
 
-  static void execute(IRCMessage message);
+public:
+  IRCResponse execute(const IRCMessage& message);
+  
 };

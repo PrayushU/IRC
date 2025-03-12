@@ -1,14 +1,15 @@
 #include "ConnectionManager.h"
 #include "ClientSession.h"
+#include "IRCResponse.h"
 #include "MessageParser.h"
 #include <boost/asio.hpp>
 #include <iostream>
 #include <memory>
 #include <string>
 
-ConnectionManager::ConnectionManager(boost::asio::io_context &io_context,
+ConnectionManager::ConnectionManager(CommandExecutor& cmdEx, boost::asio::io_context &io_context,
                                      short port)
-    : _io_context{io_context}, _resolver{io_context},
+    : _cmd_executor{cmdEx}, _io_context{io_context}, _resolver{io_context},
       _acceptor{io_context, boost::asio::ip::tcp::endpoint(
                                 boost::asio::ip::tcp::v4(), port)} {}
 
@@ -54,6 +55,9 @@ void ConnectionManager::readAsync(ClientSession &ses) {
           std::getline(is, line);
 
           IRCMessage message = MessageParser::parse(line);
+          IRCResponse res = _cmd_executor.execute(message);
+          
+          
           std::cout << "[DEBUG] " << ses.endpoint.address().to_string() << ","
                     << std::to_string(ses.endpoint.port()) << " | "
                     << message.toString() << std::endl;

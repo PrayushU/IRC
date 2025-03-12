@@ -4,6 +4,8 @@
 #include <vector>
 
 struct IRCMessage {
+  std::string message; //Full message
+
   std::string prefix;
   std::string command;
   std::vector<std::string> parameters;

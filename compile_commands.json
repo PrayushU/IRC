@@ -19,6 +19,12 @@
 },
 {
   "directory": "/Users/prayushu/c++_dir/IRC/IRC/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/prayushu/c++_dir/IRC/IRC/include -I/usr/local/include -I/Users/prayushu/c++_dir/IRC/IRC/Boost::system -I/Users/prayushu/c++_dir/IRC/IRC/Boost::url -std=c++2a -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -o CMakeFiles/IRC.dir/src/CommandExecutor.cpp.o -c /Users/prayushu/c++_dir/IRC/IRC/src/CommandExecutor.cpp",
+  "file": "/Users/prayushu/c++_dir/IRC/IRC/src/CommandExecutor.cpp",
+  "output": "CMakeFiles/IRC.dir/src/CommandExecutor.cpp.o"
+},
+{
+  "directory": "/Users/prayushu/c++_dir/IRC/IRC/build",
   "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/prayushu/c++_dir/IRC/IRC/include -I/usr/local/include -I/Users/prayushu/c++_dir/IRC/IRC/Boost::system -I/Users/prayushu/c++_dir/IRC/IRC/Boost::url -std=c++2a -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -o CMakeFiles/IRC.dir/src/main.cpp.o -c /Users/prayushu/c++_dir/IRC/IRC/src/main.cpp",
   "file": "/Users/prayushu/c++_dir/IRC/IRC/src/main.cpp",
   "output": "CMakeFiles/IRC.dir/src/main.cpp.o"

@@ -10,6 +10,7 @@ public:
 private:
   boost::asio::io_context& _io_context;
   std::shared_ptr<ConnectionManager> _connection_manager;
+  CommandExecutor _command_executor;
 };
 
 #endif // IRC_SERV

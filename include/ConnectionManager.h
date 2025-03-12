@@ -6,7 +6,7 @@
 
 class ConnectionManager {
 public:
-  explicit ConnectionManager(boost::asio::io_context &, short port);
+  explicit ConnectionManager(CommandExecutor& cmdEx, boost::asio::io_context &, short port);
   void listenAsync();
   void readAsync(ClientSession &ses);
   void writeAsync(ClientSession &ses, std::string response);
@@ -15,6 +15,8 @@ private:
   boost::asio::io_context &_io_context;
   boost::asio::ip::tcp::resolver _resolver;
   boost::asio::ip::tcp::acceptor _acceptor;
+  
+  CommandExecutor& _cmd_executor;
 
   void handleAccept(boost::asio::ip::tcp::socket socket);
 };

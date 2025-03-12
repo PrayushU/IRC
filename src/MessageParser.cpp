@@ -2,6 +2,7 @@
 
 IRCMessage MessageParser::parse(const std::string &message) {
   IRCMessage result;
+  result.message = message;
 
   size_t i = 0;
   const size_t len = message.length();
